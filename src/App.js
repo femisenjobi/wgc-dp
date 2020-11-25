@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.jpeg';
+import logo from './logo.png';
 import placeHolder from './sample.jpeg';
 import './App.css';
 
@@ -11,7 +11,7 @@ function App() {
     window.cloudinary.openUploadWidget(
       { cloud_name: 'dmlyic7tt', upload_preset: 'ml_default'},
       function(error, result) {
-        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_400,h_400,c_fill,x_-272,y_-137/bday-three_wiv6qg.jpg`);
+        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-8,y_-295,r_max/wgc-pawrat-2.jpg`);
         setloading(false)
       },
     );
@@ -20,11 +20,11 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-8 col-lg-6 offset-md-2 offset-lg-3">
-          <div className="row d-flex justify-content-center">
-            <img src={logo} alt="logo" className="img-responsive" style={{height: '120px'}} />
+        <div className="col-md-8 col-lg-6 offset-md-2 offset-lg-3 mt-4">
+          <div className="row d-flex justify-content-center mb-3">
+            <img src={logo} alt="logo" className="img-responsive" style={{height: '100px'}} />
           </div>
-          <div className="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center mb-3">
             <h3>Create your own custom DP</h3>
           </div>
           <div className="row d-flex justify-content-center mb-3">
@@ -42,7 +42,7 @@ function App() {
                 <button onClick={uploadWidget} className="upload-button btn btn-primary">
                   Upload Image
                 </button>
-                <a href={image ? image : '#'} download={'MySALTDP.jpg'} className={`btn btn-primary ${image ? '' : 'disabled'} ml-3`} target="_blank" rel="noopener noreferrer">
+                <a href={image ? image : '#'} download={'CrystalWaters.jpg'} className={`btn btn-primary ${image ? '' : 'disabled'} ml-3`} target="_blank" rel="noopener noreferrer">
                   Download
                 </a>
               </div>
