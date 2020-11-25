@@ -11,7 +11,7 @@ function App() {
     window.cloudinary.openUploadWidget(
       { cloud_name: 'dmlyic7tt', upload_preset: 'ml_default'},
       function(error, result) {
-        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-8,y_-295,r_max/wgc-pawrat-2.jpg`);
+        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-8,y_-295,r_max/fl_attachment/wgc-pawrat-2.jpg`);
         setloading(false)
       },
     );
