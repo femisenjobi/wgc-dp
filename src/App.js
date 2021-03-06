@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import logo from './logo.png';
-import placeHolder from './sample.jpeg';
+import placeHolder from './sample.jpg';
 import './App.css';
 
 function App() {
   const [image, setImage] = useState();
   const [loading, setloading] = useState(false);
+  const [downloadLink, setDownloadLink] = useState();
   const uploadWidget = () => {
     setloading(true);
     window.cloudinary.openUploadWidget(
       { cloud_name: 'dmlyic7tt', upload_preset: 'ml_default'},
       function(error, result) {
-        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-8,y_-295,r_max/fl_attachment/wgc-pawrat-2.jpg`);
+        setImage(`https://res.cloudinary.com/dmlyic7tt/image/upload/w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-298,y_-100,r_max/kdg-2021-dp_iauwar.jpg`);
+        setDownloadLink(`https://res.cloudinary.com/dmlyic7tt/image/upload/fl_attachment:my_dp,w_1080,h_1080,c_fill/l_${result[0].public_id},w_354,h_354,c_fill,x_-298,y_-100,r_max/kdg-2021-dp_iauwar.jpg`);
         setloading(false)
       },
     );
@@ -40,9 +42,9 @@ function App() {
             <div className="main">
               <div className="upload d-flex justify-content-around">
                 <button onClick={uploadWidget} className="upload-button btn btn-primary">
-                  Upload Image
+                  {image? 'Change Picture' : 'Upload Picture'}
                 </button>
-                <a href={image ? image : '#'} download={'CrystalWaters.jpg'} className={`btn btn-primary ${image ? '' : 'disabled'} ml-3`} target="_blank" rel="noopener noreferrer">
+                <a href={downloadLink ? downloadLink : '#'} download={'my_dp.jpg'} className={`btn btn-primary ${image ? '' : 'disabled'} ml-3`} target="_blank" rel="noopener noreferrer">
                   Download
                 </a>
               </div>
